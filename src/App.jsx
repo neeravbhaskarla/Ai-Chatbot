@@ -29,7 +29,7 @@ function App() {
     }
     setLoading(true)
     try {
-      const response = await openai.createComletion({
+      const response = await openai.createCompletion({
         model: 'text-davinci-003',
         prompt: text,
         temperature: 0,
