@@ -18,7 +18,6 @@ function App() {
 
   };
   const configuration = new Configuration({
-    // apiKey: import.meta.env.VITE_OPEN_AI_KEY_UNPAID
     apiKey: decriptApiKey
   })
   const openai = new OpenAIApi(configuration);
