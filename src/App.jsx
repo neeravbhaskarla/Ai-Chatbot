@@ -40,8 +40,10 @@ function App() {
         <div className="submit-button">
           <button onClick={()=>generatedText()}>Send</button>
         </div>
-        <div className='result-text'>
-          <p>{resultText}</p>
+        <div className="result-area">
+          <div className='result-text'>
+            <p>{resultText}</p>
+          </div>
         </div>
       </div>
     </div>

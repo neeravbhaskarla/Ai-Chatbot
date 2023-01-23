@@ -76,6 +76,11 @@
   height: 20vh;
 }
 
+.result-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .result-text{
   height: 30vh;
   width: 65vw;
@@ -86,9 +91,6 @@
   color: white;
   text-align: left;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 .result-text p{
   padding: 20px;
@@ -110,4 +112,39 @@ button{
 button:hover{
   background-color: white !important;
   color: black;
+}
+
+@media (max-width: 680px) {
+  .app-name{
+    font-size: 1rem;
+  }
+  .text-area{
+    height: 10vh;
+  }
+  .text-area textarea{
+    letter-spacing: 0.1rem;
+    word-spacing: 0.01rem;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 0.5rem;
+  }
+  .submit-button button{
+    height: 20px;
+    width: 60px;
+    padding: 0;
+    letter-spacing: 0.1rem;
+    font-size: 0.5rem;
+
+  }
+  .submit-button button:hover{
+    background-color: transparent;
+    border: 0.5px solid white;
+  }
+  .result-text{
+    border: 0.5px solid white;
+  }
+  .result-text p{
+    padding: 10px;
+    font-size: 0.5rem;
+  }
 }
