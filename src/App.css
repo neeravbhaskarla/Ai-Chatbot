@@ -134,10 +134,10 @@ button:hover{
     padding: 0;
     letter-spacing: 0.1rem;
     font-size: 0.5rem;
-
+    color: white;
   }
   .submit-button button:hover{
-    background-color: transparent;
+    background-color: transparent !important;
     border: 0.5px solid white;
     color: white;
   }
