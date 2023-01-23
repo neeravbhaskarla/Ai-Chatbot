@@ -22,11 +22,11 @@ function App() {
   const openai = new OpenAIApi(configuration);
   const generatedText = async() => {
     setResultText("")
-    setLoading(true)
     if(text.length < 2){
       alert("Enter Valid Text")
       return
     }
+    setLoading(true)
     try {
       const response = await openai.createCompletion({
         model: 'text-davinci-003',
