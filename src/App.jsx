@@ -6,7 +6,7 @@ function App() {
   const [resultText, setResultText] = useState("");
   const configuration = new Configuration({
     // apiKey: import.meta.env.VITE_OPEN_AI_KEY_UNPAID
-    apiKey: "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"
+    apiKey: import.meta.env.VITE_OPEN_AI_KEY_PAID
   })
   const openai = new OpenAIApi(configuration);
   const generatedText = async() => {
@@ -18,7 +18,10 @@ function App() {
       model: 'text-davinci-003',
       prompt: text,
       temperature: 0,
-      max_tokens: 64
+      max_tokens: 64,
+      top_p: 1,
+      frequency_penalty: 0.0,
+      presence_penalty: 0.0,
     })
     setResultText(response.data.choices[0].text)
   }
