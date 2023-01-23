@@ -6,6 +6,8 @@ function App() {
   const [text, setText] = useState("");
   const [resultText, setResultText] = useState("");
   const [loading, setLoading] = useState(false)
+  let decriptApiKey = import.meta.env.VITE_OPEN_AI_KEY_PAID
+  decriptApiKey = decriptApiKey.split("%").join("")
   const override = {
     display: "block",
     top: "50%",
@@ -17,7 +19,7 @@ function App() {
   };
   const configuration = new Configuration({
     // apiKey: import.meta.env.VITE_OPEN_AI_KEY_UNPAID
-    apiKey: import.meta.env.VITE_OPEN_AI_KEY_PAID
+    apiKey: decriptApiKey
   })
   const openai = new OpenAIApi(configuration);
   const generatedText = async() => {
@@ -28,11 +30,11 @@ function App() {
     }
     setLoading(true)
     try {
-      const response = await openai.createCompletion({
+      const response = await openai.createComletion({
         model: 'text-davinci-003',
         prompt: text,
         temperature: 0,
-        max_tokens: 100,
+        max_tokens: 64,
         top_p: 1,
         frequency_penalty: 0.0,
         presence_penalty: 0.0,
@@ -40,7 +42,7 @@ function App() {
       setResultText(response.data.choices[0].text)
       setLoading(false)
     } catch (error) {
-      alert("Servers are Busy. Wait sometime or contact Neerav 😅")
+      alert("Servers are Busy.\nWait sometime or contact Neerav 😅\nSorry for Inconvenience.")
       setLoading(false)
     }
   }
