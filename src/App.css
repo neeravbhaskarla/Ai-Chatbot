@@ -139,6 +139,7 @@ button:hover{
   .submit-button button:hover{
     background-color: transparent;
     border: 0.5px solid white;
+    color: white;
   }
   .result-text{
     border: 0.5px solid white;
