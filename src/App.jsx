@@ -6,7 +6,7 @@ function App() {
   const [resultText, setResultText] = useState("");
   const configuration = new Configuration({
     // apiKey: import.meta.env.VITE_OPEN_AI_KEY_UNPAID
-    apiKey: import.meta.env.VITE_OPEN_AI_KEY_PAID
+    apiKey: "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"
   })
   const openai = new OpenAIApi(configuration);
   const generatedText = async() => {
